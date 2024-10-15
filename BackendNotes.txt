@@ -1,0 +1,22 @@
+------------For debugging errors--------------------
+logging.level.org.springframework=debug
+
+------------For View Resolver-----------------------
+1) Add Dependency:
+	<dependency>
+	   <groupId>org.apache.tomcat.embed</groupId>
+	   <artifactId>tomcat-embed-jasper</artifactId>
+	   <scope>provided</scope>
+	</dependency>
+
+2) Configure View Resolver
+	spring.mvc.view.prefix=/WEB-INF/jsp/
+	spring.mvc.view.suffix=.jsp
+
+3) Create JSP 
+	/src/main/resources/META-INF/resources/WEB-INF/jsp/sayHello.jsp
+
+4) Sending data from controller to JSP use MODEL(ModelMap model)
+	model.put("name", name);   (name came from request param)  and at JSP use EL(expression Language)-> ${name}
+
+	
